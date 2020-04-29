@@ -1,14 +1,7 @@
 import '../styles/index.css'
-import search from './search'
-import render from './render'
+import React from 'react'
+import { render } from 'react-dom'
+import App from './components/App'
 
 
-(async () => {
-    try {
-        const id = prompt('Who is that Pokemon?')
-        const data = await search(id)
-        render(data)
-    } catch {
-        console.log('This Pokemon does not exist')
-    }
-})()
+render(<App />, document.getElementById('root'))

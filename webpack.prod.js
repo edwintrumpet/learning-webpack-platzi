@@ -35,7 +35,8 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             title: 'Webpack project',
-            hash: true
+            hash: true,
+            template: path.resolve(__dirname, 'src/index.html')
         }),
         new MiniCSSExtractPlugin({
             filename: 'css/[name].css'

@@ -11,5 +11,9 @@ body {
     min-height: 100vh;
     font-size: 32px;
     color: white;
-    background-color: #009B77;
+    background-color: #DD4124;
+}
+
+h1 {
+    font-weight: normal;
 }

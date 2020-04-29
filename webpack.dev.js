@@ -41,7 +41,8 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
             title: 'Webpack project',
-            hash: false
+            hash: false,
+            template: path.resolve(__dirname, 'src/index.html')
         })
     ]
 }
