@@ -1,8 +1,14 @@
 import '../styles/index.css'
-import text from './text'
+import search from './search'
+import render from './render'
 
-text()
 
-
-if (module.hot)
-module.hot.accept('./text.js', () => text())
+(async () => {
+    try {
+        const id = prompt('Who is that Pokemon?')
+        const data = await search(id)
+        render(data)
+    } catch {
+        console.log('This Pokemon does not exist')
+    }
+})()
