@@ -1,0 +1,16 @@
+{
+  "name": "webpack-platzi",
+  "version": "1.0.0",
+  "description": "Platzi Webpack course project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "javascript",
+    "frontend"
+  ],
+  "author": "Edwin García <spark.com.co@gmail.com>",
+  "license": "MIT"
+}
