@@ -1,3 +1,8 @@
 import '../styles/index.css'
+import text from './text'
 
-document.body.innerHTML = 'Home works!'
+text()
+
+
+if (module.hot)
+module.hot.accept('./text.js', () => text())
