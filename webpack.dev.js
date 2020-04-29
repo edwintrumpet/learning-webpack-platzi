@@ -1,5 +1,4 @@
 const path = require('path')
-const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 
@@ -17,10 +16,8 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    // Inject the CSS into CSS files defined in the plugin configuration
-                    {
-                        loader: MiniCSSExtractPlugin.loader
-                    },
+                    // Inject the CSS using javaScript
+                    'style-loader',
                     // Lets import CSS into javaScript
                     'css-loader'
                 ]
@@ -37,10 +34,8 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new HTMLWebpackPlugin({
-            title: 'Webpack project'
-        }),
-        new MiniCSSExtractPlugin({
-            filename: 'css/[name].css'
+            title: 'Webpack project',
+            hash: false
         })
     ]
 }
