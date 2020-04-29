@@ -12,5 +12,9 @@
     "frontend"
   ],
   "author": "Edwin García <spark.com.co@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  }
 }
