@@ -1,4 +1,5 @@
 const path = require('path')
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     entry: {
@@ -16,12 +17,19 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    // Inject the CSS using javaScript
-                    'style-loader',
+                    // Inject the CSS into CSS files defined in the plugin configuration
+                    {
+                        loader: MiniCSSExtractPlugin.loader
+                    },
                     // Lets import CSS into javaScript
                     'css-loader'
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new MiniCSSExtractPlugin({
+            filename: 'css/[name].css'
+        })
+    ]
 }
