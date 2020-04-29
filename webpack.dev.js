@@ -10,5 +10,18 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js'
     },
-    mode: 'development'
+    mode: 'development',
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    // Inject the CSS using javaScript
+                    'style-loader',
+                    // Lets import CSS into javaScript
+                    'css-loader'
+                ]
+            }
+        ]
+    }
 }
