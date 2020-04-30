@@ -86,5 +86,12 @@ module.exports = {
         new MiniCSSExtractPlugin({
             filename: 'css/[name].css'
         })
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            minSize: 0,
+            name: 'commons'
+        }
+    }
 }
