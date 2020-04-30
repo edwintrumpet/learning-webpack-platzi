@@ -25,7 +25,37 @@ module.exports = {
                     // Inject the CSS using javaScript
                     'style-loader',
                     // Lets import CSS into javaScript
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.(scss|sass)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.styl$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'stylus-loader'
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader'
                 ]
             },
             {

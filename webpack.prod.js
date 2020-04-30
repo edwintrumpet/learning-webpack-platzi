@@ -27,8 +27,53 @@ module.exports = {
                         loader: MiniCSSExtractPlugin.loader
                     },
                     // Lets import CSS into javaScript
-                    'css-loader'
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1
+                        }
+                    },
+                    'postcss-loader'
                 ]
+            },
+            {
+                test: /\.(scss|sass)$/,
+                use: [
+                    {
+                        loader: MiniCSSExtractPlugin.loader
+                    },
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.styl$/,
+                use: [
+                    {
+                        loader: MiniCSSExtractPlugin.loader
+                    },
+                    'css-loader',
+                    'stylus-loader'
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {
+                        loader: MiniCSSExtractPlugin.loader
+                    },
+                    'css-loader',
+                    'less-loader'
+                ]
+            },
+            {
+                test: /\.(jpg|png|gif|woff|eot|ttf|svg|mp4|webm)$/,
+                use: {
+                    loader: 'url-loader',
+                    options: {
+                        limit: 90000
+                    }
+                }
             }
         ]
     },
