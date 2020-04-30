@@ -4,8 +4,9 @@
   "description": "Platzi Webpack course project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "start": "webpack --config webpack.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -43,5 +44,13 @@
     "@babel/runtime": "7.9.6",
     "react": "16.13.1",
     "react-dom": "16.13.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwintrumpet/learning-webpack-platzi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/edwintrumpet/learning-webpack-platzi/issues"
+  },
+  "homepage": "https://github.com/edwintrumpet/learning-webpack-platzi#readme"
 }

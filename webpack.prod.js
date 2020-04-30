@@ -1,6 +1,7 @@
 const path = require('path')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
     entry: {
@@ -80,18 +81,14 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             title: 'Webpack project',
-            hash: true,
             template: path.resolve(__dirname, 'src/index.html')
         }),
         new MiniCSSExtractPlugin({
-            filename: 'css/[name].css'
+            filename: 'css/[name].css',
+            chunkFilename: 'css/[id].css'
+        }),
+        new webpack.DllReferencePlugin({
+            manifest: require('./modules-manifest.json')
         })
-    ],
-    optimization: {
-        splitChunks: {
-            chunks: 'all',
-            minSize: 0,
-            name: 'commons'
-        }
-    }
+    ]
 }
