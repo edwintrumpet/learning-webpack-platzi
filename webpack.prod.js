@@ -88,7 +88,8 @@ module.exports = {
             chunkFilename: 'css/[id].css'
         }),
         new webpack.DllReferencePlugin({
-            manifest: require('./modules-manifest.json')
+            manifest: require('./modules-manifest.json'),
+            context: path.resolve(__dirname, "src")
         })
     ]
 }
