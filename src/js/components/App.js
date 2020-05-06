@@ -12,8 +12,10 @@ console.log(data)
 export default function App() {
     const [loaderList, setLoaderList] = useState([])
 
-    function handleClick() {
+    async function handleClick() {
         setLoaderList(data.loaders)
+        const { alertMessage } = await import ('./alert')
+        alertMessage('This module has dynamically loaded!')
     }
     return (
         <div>
